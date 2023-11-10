@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/bootstrap.css">
+    <link rel="stylesheet" href="./assets/randstyle.css">
+
+    <title>Game</title>
+</head>
+<body>
+    <div class="container text-center">
+        <p class="h2 text-center title">Guess the random number between 0 and 9</p>
+        <p class="score">Chance: <span id="score">3</span></p>
+        <input id="randnum" title="rand" class="ipbox">
+        <br>
+        <button onclick="check()" class="check btn btn-primary" id="cbutton">Check</button>
+        <div class="hint">
+            <p id="hint"></p>
+        </div>
+    </div>
+    
+
+
+    <script src="./assets/randjs.js"></script>
+    <script src="./assets/js/bootstrap.min.js"></script>
+  
+</body>
+</html>

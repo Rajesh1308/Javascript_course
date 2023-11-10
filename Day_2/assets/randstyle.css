@@ -1,0 +1,54 @@
+body {
+    background-image: linear-gradient( rgb(213, 57, 57), rgb(235, 159, 159));
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+}
+
+.title {
+    color: rgb(255, 255, 255);
+    font-family: 'verdana';
+    margin-top: 100px;
+}
+
+.check{
+    margin-top: 30px;
+    color: white;
+    background-color: red;
+    border: none;
+    width: 100px;
+    height: 40px;
+    transition: transform .4s;
+}
+
+.check:hover{
+    transform: scale(1.2);
+    background-color: rgb(232, 9, 9);
+    color: white;
+}
+
+.check:not(:disabled):not(:disabled):active {
+    background-color: rgb(232, 9, 9);
+    color: white;
+}
+
+.ipbox {
+    border-radius: 8px;
+    border: none;
+    height: 32px;
+    width: 250px;
+    text-align: center;
+    background-color: rgb(251, 232, 232);
+}
+
+.score {
+    color: white;
+    font-size: 25px;
+}
+
+.hint {
+    font-size: 25px;
+    margin-top: 25px;
+    font-weight: bold;
+    color: white;
+}
