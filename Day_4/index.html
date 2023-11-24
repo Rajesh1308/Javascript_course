@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Name select</title>
+</head>
+<body>
+    <h1 id="name">Name</h1>
+    <button type="button" title="raj" onclick="update(event)">Rajesh</button>
+    <button type="button" title="raj" onclick="update(event)">Arthi</button>
+    <button type="button" title="raj" onclick="update(event)">Preethi</button>
+    <br>
+    <br>
+    <a href="numdelete.html">
+        <button type="button">Move to Text delete page</button>
+    </a>
+    <br>
+    <br>
+    <a href="todolist.html">
+        <button type="button">ToDoList</button>
+    </a>
+
+    <script>
+        function update(event) {
+            var text = document.getElementById("name")
+            console.log(event)
+            text.textContent = event.target.textContent
+        }
+    </script>
+</body>
+</html>

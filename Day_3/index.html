@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Addition of text</title>
+</head>
+<body>
+    <input type="text" title="ipbox" id="content">
+    <button onclick="update()">Add</button>
+    <br>
+    <button id="changecolor" onclick="changecolor()">change color</button>
+    <div id="result"></div>
+
+    <script>
+        var div = document.getElementById("result")
+        var count = 0;
+        function update()
+        {
+            var listitems = document.createElement("h1")
+            listitems.textContent = document.getElementById("content").value
+            div.append(listitems)
+        }
+
+        function changecolor() {
+            var bcolor = document.getElementById("changecolor")
+            bcolor.style.backgroundColor = "red"
+            count += 1;
+            //
+            console.log(count)
+            if (count%2 == 0){
+                bcolor.style.backgroundColor = "blue";
+            }
+        }
+        
+        
+    </script>
+</body>
+</html>

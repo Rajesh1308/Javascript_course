@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todolist prelearning</title>
+</head>
+<body>
+    <div id="hello">
+        <h1>Hello</h1>
+        <h1>World</h1>
+    </div>
+
+    <h1 class="one">No One</h1>
+    <h2>No two</h2>
+
+    <h3>One</h3>
+    <h3>Two</h3>
+    <h3>Three</h3>
+
+    <div id="ap">
+        <h4>Hello</h4>
+    </div>
+
+
+
+
+
+    <script>
+        var app = document.querySelector("#ap")
+        app.append("This ")
+        app.append("is ")
+        app.append("Rajesh")
+        app.prepend("I am a developer")
+
+        var insidecontent = document.getElementById("hello")
+        console.log("TextContent = ", insidecontent.textContent)
+        console.log("innerHtml = ", insidecontent.innerHTML)
+
+
+        //Ways of selecting an element
+        /*
+            getElementById()
+            querySelector()
+            querySelectorAll()
+            getElementByClassName()
+            getElementbyTagName()
+        */
+
+       //Queryselector - can select id, class and tag
+       var classn = document.querySelector(".one")
+       console.log(classn.textContent)
+
+       classn = document.querySelector("h2")
+       console.log(classn.textContent)
+
+       //queryselectorall - select all id or tag or class with the name provided
+       var qsall = document.querySelectorAll("h3")
+       //This gives the elements when queried using class, but when using tags use the below method
+       console.log(qsall[2].firstChild.textContent)
+       console.log(qsall[1])
+
+       // Append and prepend
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./assets/liststyle.css">
+    <title>To-Do-List</title>
+</head>
+<body>
+
+    <!--HTML code -->
+    <div class="container m30">
+        <div class="title">
+            To Do List
+        </div>
+        <div class="iparea">
+            <input type="text" title="input" id="text">
+            <br>
+            <button type="button" title="btn" onclick="add()" class="btn btn-primary m10">Add</button>
+        </div>
+        <br>
+        <ul id="list">
+            <li>&rarr;  <span>Your task will be here</span>
+                <button type="button" title="del" class="btn btn-warning m10" onclick="deleteitem()">Delete</button>
+            </li>
+        </ul>
+    </div>
+    
+
+
+    <script>
+        var ul = document.getElementById("list")
+        var ip = document.getElementById("text")
+        function add() {
+            if (ip.value != ""){
+                var listitem = document.createElement("li")
+                listitem.innerHTML = "&rarr;  " + ip.value + '  <button type="button" title="del" class="btn btn-warning m10" onclick="deleteitem()">Delete</button>'
+                ul.append(listitem)
+                ip.value = ""
+            }
+            
+        }
+
+        function deleteitem() {
+            event.target.parentElement.remove()
+        }
+    </script>
+</body>
+</html>
