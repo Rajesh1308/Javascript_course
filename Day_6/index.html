@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./files/style.css">
+    <title>Task after To-Do-List</title>
+</head>
+<body>
+    <div class="container">
+        <p class="h1 text-center">Task 6</p>
+
+        <table>
+            <form>
+                <tr>
+                    <td><label>Name : </label></td>
+                    <td><input type="text" title="name" id="ipname" required></td>
+                </tr>
+                <tr>
+                    <td><label>Age : </label></td>
+                    <td><input type="number" min="1" max="100" title="age" id="ipage"></td>
+                </tr>
+                <tr>
+                    <td><label>Gender : </label></td>
+                    <td>
+                        <input type="radio" value="Male" title="male" name="gender">
+                        <label>Male</label><br>
+                        <input type="radio" value="Female" title="female" name="gender">
+                        <label>Female</label><br>
+                        <input type="radio" value="Other" title="other" name="gender">
+                        <label>Other</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label>Course</label></td>
+                    <td>
+                        <select title="Course" size="1" id="ipcourse">
+                            <option value="Html">HTML Course</option>
+                            <option value="css">CSS Course</option>
+                            <option value="Javascript" selected>Javascript course</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label>E-mail</label></td>
+                    <td><input type="email" title="email" id="ipemail"></td>
+                </tr>
+                <tr>
+                    <td colspan="2" class="submit-btn"><input type="button" id="btn" class="btn btn-secondary" value="Submit"onclick="update()"></td>
+                </tr>             
+            </form>
+        </table>
+    
+
+
+        <!--Display-->
+
+        <table id="myTable">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>Gender</th>
+                    <th>Course</th>
+                    <th>E-mail</th>
+                    <th>Option</th>
+                </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
+    </div>
+    
+
+    <script>
+        var obj = {};
+        var flag = true;
+
+        function update() {
+            var name = document.getElementById("ipname").value
+            var age = document.getElementById("ipage").value
+            var gender = document.querySelector("input[name='gender']:checked").value
+            var course = document.getElementById("ipcourse").value
+            var email = document.getElementById("ipemail").value
+
+            if(name == ""){alert("Enter the name"); flag = false}
+            if(age == ""){alert("Enter the age"); flag = false}
+            if(gender == null){alert("Enter the gender"); flag = false}
+            if(course == null){alert("Enter the course"); flag = false}
+            
+            
+            
+
+            if(flag == true){
+                var table = document.getElementById("myTable").getElementsByTagName('tbody')[0];
+        
+                var newRow = table.insertRow();
+                var cell_name = newRow.insertCell(0);
+                var cell_age = newRow.insertCell(1);
+                var cell_gender = newRow.insertCell(2);
+                var cell_course = newRow.insertCell(3);
+                var cell_email = newRow.insertCell(4);
+                var cell_option = newRow.insertCell(5);
+
+                cell_name.innerHTML = name;
+                cell_age.innerHTML = age;
+                cell_gender.innerHTML = gender;
+                cell_course.innerHTML = course;
+                cell_email.innerHTML = email;
+                cell_option.innerHTML = '<button title="delete" onclick="delete_entry(event)" class="btn btn-warning" type="button">Delete</button>'
+
+            }
+
+            document.getElementById("ipname").value = "";
+            document.getElementById("ipage").value = "";
+            document.querySelector("input[name='gender']:checked").value = "";
+            document.getElementById("ipcourse").value = "";
+            document.getElementById("ipemail").value = "";
+            document.querySelectorAll('input[name="gender"]').forEach(function(radio) {
+            radio.checked = false;
+            });
+            
+
+        }
+
+        function delete_entry(event) {
+            console.log(event.target.parentElement.parentElement.remove())
+        }
+
+
+    </script>
+
+
+
+</body>
+</html>
